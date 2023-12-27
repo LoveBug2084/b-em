@@ -285,10 +285,6 @@ void main_init(int argc, char *argv[])
     }
 
     display = video_init();
-    // lovebug
-    if (fullscreen)
-        video_enterfullscreen();
-    // lovebug end
     mode7_makechars();
     al_init_image_addon();
     led_init();
@@ -374,6 +370,10 @@ void main_init(int argc, char *argv[])
         gui_set_disc_wprot(1, writeprot[1]);
     main_setspeed(emuspeed);
     debug_start(exec_fn);
+    // lovebug
+    if (fullscreen)
+        video_enterfullscreen();
+    // lovebug end
 }
 
 void main_restart()
